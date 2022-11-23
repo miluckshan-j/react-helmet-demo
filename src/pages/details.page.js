@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import Pokemons from "../constants/pokemon.constant";
 import { AiOutlineHome } from "react-icons/ai";
+import { SEO } from "../components";
 
 const Details = () => {
   const { number } = useParams();
@@ -28,6 +29,13 @@ const Details = () => {
 
   return (
     <Container maxW="2xl" paddingX="10" paddingY="5" centerContent>
+      <SEO
+        description={pokemon.descriptions}
+        image={pokemon.image}
+        title={pokemon.name}
+        url={window.location.href}
+        key={pokemon.name}
+      />
       <IconButton
         aria-label="Home"
         icon={<AiOutlineHome />}
