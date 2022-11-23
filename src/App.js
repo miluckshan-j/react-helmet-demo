@@ -10,7 +10,7 @@ function App() {
       <main style={{ minHeight: "calc(100vh - 6rem)" }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details/:number" element={<Details />} />
         </Routes>
       </main>
       <Footer />
