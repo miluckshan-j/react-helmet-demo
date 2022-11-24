@@ -1,7 +1,9 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import {
   Container,
+  LinkOverlay,
   IconButton,
   Card,
   CardBody,
@@ -17,13 +19,13 @@ import {
   Tbody,
   Td,
 } from "@chakra-ui/react";
-import Pokemons from "../constants/pokemon.constant";
+import Pokemons from "../../constants/pokemon.constant";
 import { AiOutlineHome } from "react-icons/ai";
-import { SEO } from "../components";
+import { SEO } from "../../components";
 
 const Details = () => {
-  const { number } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { number } = router.query;
 
   const pokemon = Pokemons.find((element) => element.number === number);
 
@@ -33,16 +35,12 @@ const Details = () => {
         description={pokemon.descriptions}
         image={pokemon.image}
         title={pokemon.name}
-        url={window.location.href}
+        url={router.pathname}
         key={pokemon.name}
       />
-      <IconButton
-        aria-label="Home"
-        icon={<AiOutlineHome />}
-        onClick={() => {
-          navigate("/");
-        }}
-      />
+      <LinkOverlay as={Link} href="/">
+        <IconButton aria-label="Home" icon={<AiOutlineHome />} />
+      </LinkOverlay>
       <Card maxW="sm" marginTop="5">
         <CardBody>
           <Image src={pokemon.image} alt={pokemon.name} borderRadius="lg" />
