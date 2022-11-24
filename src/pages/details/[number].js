@@ -23,12 +23,8 @@ import Pokemons from "../../constants/pokemon.constant";
 import { AiOutlineHome } from "react-icons/ai";
 import { SEO } from "../../components";
 
-const Details = () => {
+const Details = ({ pokemon }) => {
   const router = useRouter();
-  const { number } = router.query;
-
-  const pokemon = Pokemons.find((element) => element.number === number);
-
   return (
     <Container maxW="2xl" paddingX="10" paddingY="5" centerContent>
       <SEO
@@ -82,5 +78,14 @@ const Details = () => {
     </Container>
   );
 };
+
+export function getServerSideProps({ query }) {
+  const { number } = query;
+
+  const pokemon = Pokemons.find((element) => element.number === number);
+  return {
+    props: { pokemon },
+  };
+}
 
 export default Details;
