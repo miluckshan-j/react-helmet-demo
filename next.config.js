@@ -1,4 +1,5 @@
 module.exports = {
+  distDir: "build",
   images: {
     domains: ["assets.pokemon.com"],
     // Image optimization doesn't work with static pages
