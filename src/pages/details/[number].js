@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { withRouter } from "next/router";
 import Link from "next/link";
 import {
   Container,
@@ -23,8 +23,7 @@ import Pokemons from "../../constants/pokemon.constant";
 import { AiOutlineHome } from "react-icons/ai";
 import { SEO } from "../../components";
 
-const Details = ({ pokemon }) => {
-  const router = useRouter();
+const Details = ({ router, pokemon }) => {
   return (
     <Container maxW="2xl" paddingX="10" paddingY="5" centerContent>
       <SEO
@@ -88,4 +87,4 @@ export function getServerSideProps({ query }) {
   };
 }
 
-export default Details;
+export default withRouter(Details);
