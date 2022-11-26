@@ -1,3 +1,3 @@
-import PokemonsConstant from "./pokemon.constant";
+import Pokemons from "./pokemon.constant";
 
-export { PokemonsConstant };
+export { Pokemons };
