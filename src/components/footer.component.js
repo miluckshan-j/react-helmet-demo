@@ -11,7 +11,7 @@ const Footer = () => {
       py="1"
       height="2rem"
     >
-      <Text color="whiteAlpha.800" fontSize={["0.5rem", "md"]}>
+      <Text color="whiteAlpha.800" fontSize={["0.45rem", "md"]}>
         {`©${new Date().getFullYear()} Pokémon. ©1995 - ${new Date().getFullYear()} Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.`}
       </Text>
     </Flex>

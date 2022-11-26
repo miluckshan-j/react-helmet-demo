@@ -19,7 +19,7 @@ import {
   Tbody,
   Td,
 } from "@chakra-ui/react";
-import Pokemons from "../../constants/pokemon.constant";
+import { Pokemons } from "../../constants";
 import { AiOutlineHome } from "react-icons/ai";
 import { SEO } from "../../components";
 
