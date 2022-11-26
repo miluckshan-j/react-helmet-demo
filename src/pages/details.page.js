@@ -17,7 +17,7 @@ import {
   Tbody,
   Td,
 } from "@chakra-ui/react";
-import Pokemons from "../constants/pokemon.constant";
+import { Pokemons } from "../constants";
 import { AiOutlineHome } from "react-icons/ai";
 import { SEO } from "../components";
 
@@ -43,13 +43,22 @@ const Details = () => {
           navigate("/");
         }}
       />
-      <Card maxW="sm" marginTop="5">
+      <Card maxW="sm" marginTop="5" alignContent="center">
         <CardBody>
-          <Image src={pokemon.image} alt={pokemon.name} borderRadius="lg" />
+          <Image
+            src={pokemon.image}
+            alt={pokemon.name}
+            width="fit-content"
+            minHeight="200px"
+          />
           <Stack mt="6" spacing="3">
-            <Heading size="md">{pokemon.name}</Heading>
+            <Heading size="md" textAlign="center">
+              {pokemon.name}
+            </Heading>
+            <Text fontSize="2xl" textAlign="center">
+              #{pokemon.number}
+            </Text>
             <Text>{pokemon.descriptions}</Text>
-            <Text fontSize="2xl">#{pokemon.number}</Text>
           </Stack>
         </CardBody>
         <Divider />
